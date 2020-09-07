@@ -1,0 +1,33 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post"><br>
+    {% csrf_token %}
+
+<h1> Find maximum edge of a triangle for the given two sides: Please enter the two sides  below </h1>
+{{form|crispy}}
+    <button type="submit"> Submit</button><br><br>
+</form>
+
+</form>
+<form action = "external" method = "post">
+{% csrf_token %}
+    Enter two sides of triangle:<br>
+    <input type="number" name="param1" required> <br> <br>
+    <input type="number" name="param2" required> <br> <br>
+
+
+    <br><br><br><br>
+    {{data_external}}
+    {{data1}}
+    <input type = "submit" value="Execute Python Script">
+<!--<button onclick ="window.location='external'"   > Find the Area of triangle </button> <hr>-->
+</form>
+
+</body>
+</html>
