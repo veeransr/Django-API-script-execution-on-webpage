@@ -1,0 +1,32 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="post">
+
+    {% csrf_token %}
+{% block body_block %}Text Repeater{% endblock %}
+<h1> Want to repeat your text multiple times: Please enter the text and the number of times to be repeated below </h1>
+{{form|crispy}}
+    <button type="submit"> Submit</button>
+</form>
+
+</form>
+<form action = "external" method = "post">
+{% csrf_token %}
+    Enter Days, hours, minutes, seconds  in the same order to convert:<br>
+    <input type="text" name="param1" required> <br> <br>
+    <input type="number" name="param2" required> <br> <br>
+
+
+    <br><br><br>
+    {{data_external}}
+    {{data1}}
+    <input type = "submit" value="Execute Python Script">
+<!--<button onclick ="window.location='external'"   > Find the Area of triangle </button> <hr>-->
+</form>
