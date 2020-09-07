@@ -1,0 +1,45 @@
+{% load crispy_forms_tags %}
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:margin="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://pypyjs.org/pypyjs-release/lib/Promise.min.js"></script>
+     <script src="http://pypyjs.org/pypyjs-release/lib/FunctionPromise.js"></script>
+     <script src="http://pypyjs.org/pypyjs-release/lib/pypyjs.js"></script>
+
+
+
+
+</head>
+
+
+<form method="post">
+    {% csrf_token %}
+
+    <h>Calculate Triangle area: Please enter the three sides of the triangle</h>
+{{form|crispy}} <br><br>
+
+
+    <button type="submit", onclick="location.href= '{%url 'script'%}'"> Submit to database</button> <br> <br><br><br><br>
+
+
+
+</form>
+<form action = "external" method = "post">
+{% csrf_token %}
+    Enter three sides of triangle:<br>
+    <input type="number" name="param1" required> <br> <br>
+    <input type="number" name="param2" required> <br> <br>
+    <input type="number" name="param3" required> <br> <br>
+
+    <br><br><br>
+    {{data_external}}
+    {{data1}}
+    <input type = "submit" value="Execute Python Script">
+<!--<button onclick ="window.location='external'"   > Find the Area of triangle </button> <hr>-->
+</form>
+</body>
+</html>
