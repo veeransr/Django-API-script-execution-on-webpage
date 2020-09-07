@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp',
+    'area_of_triangle',
     'crispy_forms',
     'convert_to_seconds',
     'find_max_edge',
