@@ -1,0 +1,35 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+
+<h1> Convert your values to seconds: Please enter the values below </h1>
+{{form|crispy}}
+    <button type="submit"> Submit</button><br><br><br><br><br>
+</form>
+
+
+</form>
+<form action = "external" method = "post">
+{% csrf_token %}
+    Enter Days, hours, minutes, seconds  in the same order to convert:<br>
+    <input type="number" name="param1" required> <br> <br>
+    <input type="number" name="param2" required> <br> <br>
+    <input type="number" name="param3" required> <br> <br>
+    <input type="number" name="param4" required> <br> <br>
+
+    <br><br><br>
+    {{data_external}}
+    {{data1}}
+    <input type = "submit" value="Execute Python Script">
+
+</form>
+
+</body>
+</html>
